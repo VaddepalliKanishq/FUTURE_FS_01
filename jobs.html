@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Opportunities | Vaddepalli Kanishq</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Script inline to prevent Dark Mode flicker -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('portfolio-theme');
+            if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+                document.addEventListener('DOMContentLoaded', () => document.body.classList.add('dark'));
+            }
+        })();
+    </script>
+</head>
+<body>
+    <nav>
+        <div class="brand">
+            <div class="brand-icon">VK</div>
+            <h2><a href="index.html">Vaddepalli Kanishq</a></h2>
+        </div>
+        <ul id="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark Mode">
+                <!-- Sun Icon -->
+                <svg class="sun-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                <!-- Moon Icon -->
+                <svg class="moon-icon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+            </button>
+            <button class="nav-toggle-btn" id="nav-toggle-btn" aria-label="Toggle Navigation">☰</button>
+        </div>
+    </nav>
+
+    <section class="jobs-page-section">
+        <div class="section-header">
+            <span class="eyebrow">Career Portal</span>
+            <h2>Suggested Opportunities</h2>
+        </div>
+
+        <!-- Filter and Search Interface -->
+        <div class="jobs-filter-panel">
+            <div class="search-field-wrapper">
+                <input type="text" id="jobs-search-input" placeholder="Search roles, required skills, or tech keywords...">
+            </div>
+            <div class="filter-group">
+                <label for="jobs-category-filter">Type:</label>
+                <select id="jobs-category-filter">
+                    <option value="all">All Openings</option>
+                    <option value="internship">Internships</option>
+                    <option value="fulltime">Full-time Roles</option>
+                    <option value="freelance">Freelance Tasks</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Opportunities Grid -->
+        <div class="jobs-grid" id="jobs-grid">
+            <div class="card job-card matched" data-category="internship" data-skills="html css javascript react">
+                <div class="job-header">
+                    <h3 class="job-title">Frontend Developer Intern</h3>
+                    <span class="job-match-badge">95% Match</span>
+                </div>
+                <div class="job-tags">
+                    <span class="job-tag">HTML5/CSS3</span>
+                    <span class="job-tag">JavaScript</span>
+                    <span class="job-tag">React.js</span>
+                    <span class="job-tag">Internship</span>
+                </div>
+                <p class="job-details">Best suited for developers focused on writing modular Javascript, responsive flexbox/grid containers, and standard-compliant markup. Will build interactive client-side interfaces.</p>
+                <div class="job-action">
+                    <a href="contact.html" class="btn">Apply Now</a>
+                </div>
+            </div>
+
+            <div class="card job-card" data-category="internship" data-skills="web design ui ux client-side HTML">
+                <div class="job-header">
+                    <h3 class="job-title">Web Development Trainee</h3>
+                    <span class="job-match-badge">85% Match</span>
+                </div>
+                <div class="job-tags">
+                    <span class="job-tag">UI/UX Design</span>
+                    <span class="job-tag">HTML/CSS</span>
+                    <span class="job-tag">Git Version Control</span>
+                    <span class="job-tag">Internship</span>
+                </div>
+                <p class="job-details">Perfect for engineers seeking to establish strong full-stack skills. Covers client communication, structural SEO principles, dynamic state caching, and Git collaboration workflows.</p>
+                <div class="job-action">
+                    <a href="contact.html" class="btn">Apply Now</a>
+                </div>
+            </div>
+
+            <div class="card job-card matched" data-category="fulltime" data-skills="python javascript git systems SQL">
+                <div class="job-header">
+                    <h3 class="job-title">Junior Software Engineer</h3>
+                    <span class="job-match-badge">90% Match</span>
+                </div>
+                <div class="job-tags">
+                    <span class="job-tag">Python</span>
+                    <span class="job-tag">JavaScript</span>
+                    <span class="job-tag">Git & Hub</span>
+                    <span class="job-tag">Full-Time</span>
+                </div>
+                <p class="job-details">Suitable for candidates with strong foundations in object-oriented structures, database scripts, API routes, and standard repository branching models.</p>
+                <div class="job-action">
+                    <a href="contact.html" class="btn">Apply Now</a>
+                </div>
+            </div>
+
+            <div class="card job-card" data-category="freelance" data-skills="portfolio ui design styling custom CSS">
+                <div class="job-header">
+                    <h3 class="job-title">Freelance Web Specialist</h3>
+                    <span class="job-match-badge">80% Match</span>
+                </div>
+                <div class="job-tags">
+                    <span class="job-tag">Custom CSS</span>
+                    <span class="job-tag">Graphic Design</span>
+                    <span class="job-tag">API Integration</span>
+                    <span class="job-tag">Freelance</span>
+                </div>
+                <p class="job-details">Great opportunity to design independent templates, custom glassmorphism styles, and specialized animations. Flexible schedule based on contract milestones.</p>
+                <div class="job-action">
+                    <a href="contact.html" class="btn">Apply Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Vaddepalli Kanishq. Designed for high performance.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

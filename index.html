@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaddepalli Kanishq | Personal Professional Portfolio</title>
+    <meta name="description" content="Professional portfolio of Vaddepalli Kanishq, Frontend & Full Stack Web Developer. View skills, dynamic projects, coding analytics, focus timer, and connect for opportunities.">
+    <meta name="keywords" content="Vaddepalli Kanishq, Kanishq portfolio, web developer, frontend developer, dynamic resume, future interns task">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Vaddepalli Kanishq | Portfolio">
+    <meta property="og:description" content="Professional portfolio showcasing projects, interactive resume, dynamic skills sync, and developer focus dashboard.">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Script inline to prevent Dark Mode flicker -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('portfolio-theme');
+            if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+                document.addEventListener('DOMContentLoaded', () => document.body.classList.add('dark'));
+            }
+        })();
+    </script>
+</head>
+<body>
+    <nav>
+        <div class="brand">
+            <div class="brand-icon">VK</div>
+            <h2><a href="index.html">Vaddepalli Kanishq</a></h2>
+        </div>
+        <ul id="nav-menu">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark Mode">
+                <!-- Sun Icon -->
+                <svg class="sun-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                <!-- Moon Icon -->
+                <svg class="moon-icon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+            </button>
+            <button class="nav-toggle-btn" id="nav-toggle-btn" aria-label="Toggle Navigation">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="eyebrow">Full Stack Web Developer</span>
+            <h1>Hello, I'm <span>Kanishq</span></h1>
+            <p class="hero-text">I craft elegant, responsive, and performance-optimized web systems. Let's build something awesome together!</p>
+            <div class="page-links">
+                <a href="projects.html" class="btn">
+                    <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                    Manage Projects
+                </a>
+                <a href="jobs.html" class="btn btn-secondary">
+                    <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    Explore Job Hub
+                </a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="profile-card">
+                <div class="profile-avatar">VK</div>
+                <h3>Vaddepalli Kanishq</h3>
+                <p>Frontend & Web Developer</p>
+                <div class="profile-tags">
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>JavaScript</span>
+                    <span>React.js</span>
+                </div>
+            </div>
+            <div class="floating-card card-one">Available for Internships</div>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section class="dashboard-section">
+        <div class="dashboard-panel">
+            <div class="dashboard-top">
+                <div>
+                    <span class="eyebrow">Dev Console</span>
+                    <h2>Developer Performance Console</h2>
+                </div>
+                <div class="dashboard-tabs">
+                    <button class="tab-btn active" data-tab="overview">Overview</button>
+                    <button class="tab-btn" data-tab="analytics">Analytics</button>
+                    <button class="tab-btn" data-tab="tasks">Tasks & Focus</button>
+                </div>
+            </div>
+
+            <!-- Stats Counters -->
+            <div class="dashboard-stat-grid">
+                <div class="dashboard-stat">
+                    <p>Projects Done</p>
+                    <h3 class="counter" id="stat-projects-counter" data-target="8">0</h3>
+                </div>
+                <div class="dashboard-stat">
+                    <p>Hours Coded</p>
+                    <h3 class="counter" data-target="650">0</h3>
+                </div>
+                <div class="dashboard-stat">
+                    <p>Milestones Reached</p>
+                    <h3 class="counter" data-target="95">0</h3>
+                </div>
+            </div>
+
+            <!-- Panel: Overview -->
+            <div class="tab-panel active" data-panel="overview">
+                <div class="dashboard-body" id="overview-progress-container">
+                    <div class="progress-card">
+                        <p>Frontend Skill Proficiency</p>
+                        <div class="progress-bar"><span style="width: 90%"></span></div>
+                    </div>
+                    <div class="progress-card">
+                        <p>Data Structures & Algorithms</p>
+                        <div class="progress-bar"><span style="width: 80%"></span></div>
+                    </div>
+                    <div class="progress-card">
+                        <p>Clean Code Architecture</p>
+                        <div class="progress-bar"><span style="width: 85%"></span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panel: Analytics (SVG Chart) -->
+            <div class="tab-panel" data-panel="analytics">
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h4>Coding Frequency (Last 7 Days)</h4>
+                        <div class="chart-legend">
+                            <div class="legend-item">
+                                <span class="legend-color" style="background: var(--primary);"></span>
+                                <span>Code Hours</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color" style="background: var(--secondary);"></span>
+                                <span>Commits</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart-svg-wrapper">
+                        <!-- Chart Tooltip -->
+                        <div class="chart-tooltip" id="chart-tooltip">12 hrs code</div>
+                        <!-- SVG line graph -->
+                        <svg viewBox="0 0 600 200" id="analytics-svg">
+                            <!-- Grid lines -->
+                            <line x1="50" y1="20" x2="550" y2="20" stroke="var(--border)" stroke-dasharray="4"/>
+                            <line x1="50" y1="70" x2="550" y2="70" stroke="var(--border)" stroke-dasharray="4"/>
+                            <line x1="50" y1="120" x2="550" y2="120" stroke="var(--border)" stroke-dasharray="4"/>
+                            <line x1="50" y1="170" x2="550" y2="170" stroke="var(--border)"/>
+                            
+                            <!-- X Axis Labels -->
+                            <text x="50" y="190" fill="var(--text-muted)" font-size="10" text-anchor="middle">Mon</text>
+                            <text x="133" y="190" fill="var(--text-muted)" font-size="10" text-anchor="middle">Tue</text>
+                            <text x="216" y="190" fill="var(--text-muted)" font-size="10" text-anchor="middle">Wed</text>
+                            <text x="300" y="190" fill="var(--text-muted)" font-size="10" text-anchor="middle">Thu</text>
+                            <text x="383" y="190" fill="var(--text-muted)" font-size="10" text-anchor="middle">Fri</text>
+                            <text x="466" y="190" fill="var(--text-muted)" font-size="10" text-anchor="middle">Sat</text>
+                            <text x="550" y="190" fill="var(--text-muted)" font-size="10" text-anchor="middle">Sun</text>
+                            
+                            <!-- Graph Path (Coding Hours) -->
+                            <path d="M 50 140 Q 133 90 216 110 T 300 50 T 383 120 T 466 70 T 550 40" fill="none" stroke="var(--primary)" stroke-width="4" stroke-linecap="round"/>
+                            
+                            <!-- Graph Path (Commits) -->
+                            <path d="M 50 160 Q 133 130 216 120 T 300 80 T 383 140 T 466 110 T 550 80" fill="none" stroke="var(--secondary)" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 2"/>
+                            
+                            <!-- Interactive dots (Coding Hours) -->
+                            <circle cx="50" cy="140" r="6" fill="var(--primary)" class="chart-point" data-info="Mon: 3 Hours Coding"/>
+                            <circle cx="133" cy="90" r="6" fill="var(--primary)" class="chart-point" data-info="Tue: 8 Hours Coding"/>
+                            <circle cx="216" cy="110" r="6" fill="var(--primary)" class="chart-point" data-info="Wed: 6 Hours Coding"/>
+                            <circle cx="300" cy="50" r="6" fill="var(--primary)" class="chart-point" data-info="Thu: 12 Hours Coding"/>
+                            <circle cx="383" cy="120" r="6" fill="var(--primary)" class="chart-point" data-info="Fri: 5 Hours Coding"/>
+                            <circle cx="466" cy="70" r="6" fill="var(--primary)" class="chart-point" data-info="Sat: 10 Hours Coding"/>
+                            <circle cx="550" cy="40" r="6" fill="var(--primary)" class="chart-point" data-info="Sun: 13 Hours Coding"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panel: Tasks & Pomodoro Timer -->
+            <div class="tab-panel" data-panel="tasks">
+                <div class="tasks-panel-layout">
+                    <!-- Tasks Tracker -->
+                    <div class="interactive-todo-widget">
+                        <h4>Activity Backlog</h4>
+                        <form id="todo-form" class="todo-input-group">
+                            <input type="text" id="todo-input" placeholder="Plan your next dev sprint..." required>
+                            <button type="submit" class="btn">Add</button>
+                        </form>
+                        <div class="todo-list-wrapper" id="todo-list">
+                            <!-- Injected by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Pomodoro Focus Widget -->
+                    <div class="pomodoro-widget">
+                        <h4>Pomodoro Focus Engine</h4>
+                        <div class="timer-circle-container">
+                            <svg class="timer-svg">
+                                <circle cx="70" cy="70" r="65" class="timer-bg-circle"></circle>
+                                <circle cx="70" cy="70" r="65" class="timer-progress-circle" id="timer-progress"></circle>
+                            </svg>
+                            <div class="timer-display" id="timer-display">25:00</div>
+                        </div>
+                        <div class="timer-controls">
+                            <button class="timer-btn btn-start" id="timer-start-btn">Start</button>
+                            <button class="timer-btn" id="timer-reset-btn">Reset</button>
+                        </div>
+                        <div class="timer-options">
+                            <button class="timer-opt-btn active" data-time="1500">Work</button>
+                            <button class="timer-opt-btn" data-time="300">Break</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="section-header">
+            <span class="eyebrow">Who I Am</span>
+            <h2>Architecting Clean Web Experiences</h2>
+        </div>
+        <div class="about-grid">
+            <div class="card about-card">
+                <p>I focus on constructing responsive frontends and clean backend integration. I enjoy exploring algorithms, building interfaces, and building products that offer seamless interactions.</p>
+                <p>My continuous learning habit enables me to quickly adapt to the evolving Javascript ecosystem and apply modern engineering paradigms to real projects.</p>
+            </div>
+            <div class="card info-card">
+                <h3>Vitals Summary</h3>
+                <p><strong>Primary Hub:</strong> <span>India</span></p>
+                <p><strong>Focus:</strong> <span>Full Stack Dev / UI Architecture</span></p>
+                <p><strong>Current Goal:</strong> <span>Build Premium Core Products</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Resume Section -->
+    <section id="resume" class="interactive-resume-section">
+        <div class="section-header">
+            <span class="eyebrow">Professional History</span>
+            <h2>Interactive Resume</h2>
+        </div>
+        <div class="resume-tabs">
+            <button class="resume-tab-btn active" data-resume-tab="experience">Experience</button>
+            <button class="resume-tab-btn" data-resume-tab="education">Education</button>
+        </div>
+        <div class="resume-content">
+            <!-- Experience panel -->
+            <div class="resume-panel active" id="resume-experience">
+                <div class="resume-item open">
+                    <div class="resume-item-header">
+                        <div class="resume-item-title-area">
+                            <h4>Full Stack Web Developer Intern</h4>
+                            <span class="resume-item-company">Future Interns</span>
+                        </div>
+                        <div class="resume-item-meta">
+                            <span class="resume-item-date">2026 - Present</span>
+                            <div class="resume-item-location">Remote</div>
+                        </div>
+                        <span class="resume-toggle-icon">▼</span>
+                    </div>
+                    <div class="resume-item-body">
+                        <p>Directing user-interface design and dynamic state synchronization across multi-page portfolio websites.</p>
+                        <ul>
+                            <li>Engineered client-side database layer using window.localStorage for real-time dashboard updates.</li>
+                            <li>Integrated glassmorphism aesthetics and custom-designed charts using vanilla inline SVGs.</li>
+                            <li>Designed a Pomodoro focus widget and an active Inbox for message logs.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resume-item">
+                    <div class="resume-item-header">
+                        <div class="resume-item-title-area">
+                            <h4>Freelance Web Specialist</h4>
+                            <span class="resume-item-company">Self-employed</span>
+                        </div>
+                        <div class="resume-item-meta">
+                            <span class="resume-item-date">2025 - 2026</span>
+                            <div class="resume-item-location">India</div>
+                        </div>
+                        <span class="resume-toggle-icon">▼</span>
+                    </div>
+                    <div class="resume-item-body">
+                        <p>Constructed highly engaging landing pages and web components for early-stage initiatives.</p>
+                        <ul>
+                            <li>Improved page load dynamics and asset structures, increasing responsiveness by 40%.</li>
+                            <li>Engineered reusable Javascript patterns for custom search, filter systems, and sliders.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Education panel -->
+            <div class="resume-panel" id="resume-education">
+                <div class="resume-item open">
+                    <div class="resume-item-header">
+                        <div class="resume-item-title-area">
+                            <h4>B.Tech in Computer Science & Engineering</h4>
+                            <span class="resume-item-company">Engineering University</span>
+                        </div>
+                        <div class="resume-item-meta">
+                            <span class="resume-item-date">2023 - 2027</span>
+                            <div class="resume-item-location">India</div>
+                        </div>
+                        <span class="resume-toggle-icon">▼</span>
+                    </div>
+                    <div class="resume-item-body">
+                        <p>Concentrating on software algorithms, responsive web system architectures, and core computer science fundamentals.</p>
+                        <ul>
+                            <li>Engaging in tech communities and open source tasks.</li>
+                            <li>Key concepts: Data Structures, UI Design, DBMS, Web Architectures.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="resume-actions">
+            <button class="btn btn-secondary" onclick="window.print()">
+                <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+                Print / Save Resume
+            </button>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="section-header">
+            <span class="eyebrow">My Toolkit</span>
+            <h2>Current Tech Competencies</h2>
+        </div>
+        <div id="skills-homepage-list" class="skill-grid">
+            <!-- Dynamic skills list rendered from localstorage -->
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="section-header">
+            <span class="eyebrow">Showcase</span>
+            <h2>Featured Web Projects</h2>
+        </div>
+        <div id="projects-homepage-list" class="project-grid">
+            <!-- Dynamic projects rendered from localstorage -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Vaddepalli Kanishq. Designed for high performance.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
